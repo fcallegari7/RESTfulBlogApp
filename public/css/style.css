@@ -11,3 +11,7 @@ img {
   max-width: 400px;
   max-height: auto;
 }
+
+#delete {
+  display: inline;
+}

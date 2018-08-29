@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var expressSanitizer = require('express-sanitizer');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var app = express();
@@ -9,6 +10,7 @@ mongoose.connect('mongodb://localhost/restful_blog_app', {useNewUrlParser: true}
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 
 //MONGOOSE/MODEL CONFIG
@@ -26,7 +28,7 @@ var Blog = mongoose.model('Blog', blogSchema);
 //INDEX ROUTE
 app.get('/', function(req, res){
   res.redirect('/blogs');
-})
+});
 
 app.get('/blogs', function(req, res){
   Blog.find({}, function(err, blogs){
@@ -36,7 +38,7 @@ app.get('/blogs', function(req, res){
       res.render('index', {blogs: blogs});
     }
   });
-})
+});
 
 //NEW ROUTE
 app.get('/blogs/new', function(req, res){
@@ -45,13 +47,14 @@ app.get('/blogs/new', function(req, res){
 
 //CREATE ROUTE
 app.post('/blogs', function(req, res){
+  req.body.blog.body = req.sanitize(req.body.blog.body);
   Blog.create(req.body.blog, function(err, newBlog){
     if (err) {
       res.render('new');
     } else {
       res.redirect('/blogs');
     }
-  })
+  });
 });
 
 //SHOW ROUTE
@@ -78,13 +81,30 @@ app.get('/blogs/:id/edit', function(req, res){
 
 //UPDATE ROUTE
 app.get('/blogs/:id', function(req, res){
-  Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+  req.body.blog.body = req.sanitize(req.body.blog.body);
+  Blog.findOneAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
     if (err) {
       res.redirect('/blogs');
     } else {
       res.redirect('/blogs' + req.params.id);
     }
   });
+});
+
+//DELETE ROUTE
+app.delete('/blogs/:id', function(req, res){
+  Blog.findOneAndDelete(req.params.id, function(err){
+    if (err) {
+      res.redirect('/blogs');
+    } else {
+      res.redirect('/blogs');
+    }
+  });
+});
+
+//ABOUT PAGE
+app.get('/about', function(req, res){
+  res.render('about');
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
