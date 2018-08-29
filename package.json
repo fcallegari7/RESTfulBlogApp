@@ -15,7 +15,7 @@
   "license": "ISC",
   "engines": {
   "npm": "5.6.0",
-  "node": "9.5.0"  
+  "node": "9.5.0"
   },
   "bugs": {
     "url": "https://github.com/fcallegari7/RESTfulBlogApp/issues"
@@ -27,6 +27,7 @@
     "express": "^4.16.3",
     "express-sanitizer": "^1.0.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.2.10"
+    "mongoose": "^5.2.10",
+    "serve-favicon": "^2.5.0"
   }
 }
