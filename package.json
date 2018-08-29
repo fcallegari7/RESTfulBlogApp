@@ -1,9 +1,10 @@
 {
   "name": "restfulblogapp",
   "version": "1.0.0",
-  "description": "A blog app using REST for CRUD",
+  "description": "A blog app using REST and CRUD",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,6 +13,10 @@
   },
   "author": "Fabio Callegari",
   "license": "ISC",
+  "engines": {
+  "npm": "5.6.0",
+  "node": "9.5.0"  
+  },
   "bugs": {
     "url": "https://github.com/fcallegari7/RESTfulBlogApp/issues"
   },
