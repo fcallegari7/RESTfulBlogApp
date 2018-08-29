@@ -3,8 +3,8 @@ i.icon {
   font-weight: 400;
 }
 
-.container.main {
-  margin-top: 7em;
+i.chevron {
+  font-size: 1em;
 }
 
 img {
@@ -14,4 +14,27 @@ img {
 
 #delete {
   display: inline;
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container.main {
+  margin-top: 7em;
+  flex: 1;
+}
+
+#footer {
+  justify-content: center;
+}
+
+#description {
+  margin: .6em;
+}
+
+#created {
+  margin: .2em;
 }

@@ -2,9 +2,26 @@
 
 <div class="ui main text container segment">
   <div class="ui huge header">About</div>
-  
+  <p>The RESTful Blog App is an web application developed using
+    <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>,
+    <a href="https://nodejs.org/en/" target="_blank">Node.js</a>,
+    <a href="https://expressjs.com/" target="_blank">Express</a>,
+    <a href="http://ejs.co/" target="_blank">EJS</a> and
+    <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a>.</p>
+  <p>The Blog App routers allow to see the index with all posts, create a new post, see more details about a particular post, and then edit, update or delete a post.</p>
+  <h3>REST and CRUD</h3>
+  <p>The idea behind this project is to follow <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> for HTTP requests. <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> (Representational State Transfer) is a pattern for defining the routes. It is a way of mapping HTTP routes and <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> (Create, Read, Update, Destroy/Delete) together.</p>
+  <h3>method-override</h3>
+  <p>As HTML forms only supports GET and POST requests, I used <a href="https://www.npmjs.com/package/method-override">method-override</a> package to override the POST as PUT and DELETE requests.</p>
+  <h3>express-sanitizer</h3>
+  <p>Even though I allow the user to enter HTML code to customize the post, I don’t want to allow the user to enter a script tag, so I use the package <a href="https://www.npmjs.com/package/express-sanitizer">express-sanitizer</a> that remove all scripts from the text and leaves only the pure HTML.</p>
+  <h3>Semantic UI</h3>
+  <p>The true purpose of using <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a> in this application instead of using Bootstrap was to learn a new CSS library, other than Bootstrap and Foundation, and see how much CSS libraries have in common.</p>
+  <p><a href="https://semantic-ui.com/" target="_blank">Semantic UI</a> is a CSS library similar to Bootstrap. The main difference between them is that with <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a> you can get only one component, instead of getting the whole library, if you don’t need to.</p>
+  <p>Also, when compared to Bootstrap, <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a> classes names are more meaningful and easier to grasp.</p>
+  <h3>mlab</h3>
+  <p>MongoDB is a NoSQL database, so you don't need to follow the same table structure everytime when populating your db. However, I used mongoose Schema to create a pattern for saving the data.</p>
+  <p>The database is hosted on mlab</p>.
 </div>
-
-
 
 <% include ./partials/footer %>
