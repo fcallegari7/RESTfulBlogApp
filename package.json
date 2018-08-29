@@ -7,20 +7,16 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fcallegari7/RESTfulBlogApp.git"
-  },
   "author": "Fabio Callegari",
   "license": "ISC",
   "engines": {
   "npm": "5.6.0",
   "node": "9.5.0"
   },
-  "bugs": {
-    "url": "https://github.com/fcallegari7/RESTfulBlogApp/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcallegari7/RESTfulBlogApp.git"
   },
-  "homepage": "https://github.com/fcallegari7/RESTfulBlogApp#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
