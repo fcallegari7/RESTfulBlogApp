@@ -10,8 +10,8 @@ const keys = require('./config/keys');
 
 //APP CONFIG
 app.set('view engine', 'ejs');
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static('public'));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride('_method'));
