@@ -4,14 +4,13 @@ var expressSanitizer = require('express-sanitizer');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var app = express();
-var favicon = require('serve-favicon');
-var path = require('path');
+const favicon = require('express-favicon');
 const keys = require('./config/keys');
 
 //APP CONFIG
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride('_method'));

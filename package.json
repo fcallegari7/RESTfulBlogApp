@@ -10,8 +10,8 @@
   "author": "Fabio Callegari",
   "license": "ISC",
   "engines": {
-  "npm": "5.6.0",
-  "node": "9.5.0"
+    "npm": "5.6.0",
+    "node": "9.5.0"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,9 @@
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "express-favicon": "^2.0.1",
     "express-sanitizer": "^1.0.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.2.10",
-    "serve-favicon": "^2.5.0"
+    "mongoose": "^5.2.10"
   }
 }
