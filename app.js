@@ -5,10 +5,12 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var app = express();
 var favicon = require('serve-favicon');
+var path = require('path');
 const keys = require('./config/keys');
 
 //APP CONFIG
 app.set('view engine', 'ejs');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
